@@ -1,0 +1,7 @@
+const config = {
+    'token': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'ownerID': 'xxxxxxxxxxxxxxxxxx',
+    'prefix': 'b!',
+    'fnkey': 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+};
+module.exports = config;

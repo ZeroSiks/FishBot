@@ -1,0 +1,23 @@
+{
+  "name": "bermuda.fn",
+  "version": "1.0.0",
+  "description": "Discord Fortnite Bot of sorts.. eh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AliRaish",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.0.1",
+    "chalk": "^2.4.1",
+    "discord.js": "^11.3.2",
+    "enmap": "^2.7.2",
+    "enmap-level": "^2.1.0",
+    "eslint": "^5.10.0",
+    "fortnite": "^4.1.1",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "snekfetch": "^4.0.4"
+  }
+}
