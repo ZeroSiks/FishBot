@@ -90,7 +90,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                         const canvas = Canvas.createCanvas(700, 500);
                         const ctx = canvas.getContext('2d');
 
-                        const background = await Canvas.loadImage('./wallpaper.png');
+                        const background = await Canvas.loadImage('./assets/wallpaper.png');
                         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
                         const ree = result.username;
@@ -150,7 +150,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                         ctx.fillStyle = '#ffffff';
                         ctx.fillText(statz.Score, 20, 478);
 
-                        const logo = await Canvas.loadImage('./fn-logo.jpg');
+                        const logo = await Canvas.loadImage('./assets/fn-logo.jpg');
                         ctx.drawImage(logo, 25, 25, 200, 200);
 
                         const attachment = new Discord.Attachment(canvas.toBuffer(), './ree.png');
