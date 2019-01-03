@@ -6,9 +6,9 @@ module.exports = (client) => {
 
         // https://gist.github.com/vegeta897/b006e789fe5712cf04f257090e73230b
         const START_DATE = '2019-01-03'; // Date used as the starting point for multi-hour intervals, must be YYYY-MM-DD format
-        const START_HOUR = 12; // Hour of the day when the timer begins (0 is 12am, 23 is 11pm), used with START_DATE and INTERVAL_HOURS param
+        const START_HOUR = 5; // Hour of the day when the timer begins (0 is 12am, 23 is 11pm), used with START_DATE and INTERVAL_HOURS param
         const INTERVAL_HOURS = 24; // Trigger at an interval of every X hours
-        const TARGET_MINUTE = 30; // Minute of the hour when the chest will refresh, 30 means 1:30, 2:30, etc.
+        const TARGET_MINUTE = 10; // Minute of the hour when the chest will refresh, 30 means 1:30, 2:30, etc.
         const OFFSET = 0; // Notification will warn that the target is X minutes away
 
         // Don't change any code below
