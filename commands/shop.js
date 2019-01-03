@@ -21,6 +21,12 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
             }
         }
         const attachment = new Discord.Attachment(canvas.toBuffer(), 'shop.png');
-        message.channel.send(`Shop data for **${res.date}**`, attachment);
+        if (message) {
+            message.channel.send(`Shop data for **${res.date}**`, attachment);
+        } else {
+            const notify_channel = client.channels.find(x => x.id === '524148033877704714');
+            notify_channel.send(`Shop data for **${res.date}**`, attachment);
+        }
+        
     }).catch(err => console.error(err));
 };

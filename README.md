@@ -3,8 +3,7 @@ A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
 
 ## Features
 - Solo, Duo, Squad and overall Fortnite BR stats commands.
-- Grab Fortnite BR daily shop.
-
+- Grab Fortnite BR daily shop. (With either the command or the autoshop feature)
 
 ## Requirements
 - `git` command line
