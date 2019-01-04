@@ -24,7 +24,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         if (message) {
             message.channel.send(`Shop data for **${res.date}**`, attachment);
         } else {
-            const notify_channel = client.channels.find(x => x.id === '524148033877704714');
+            const notify_channel = client.channels.find(x => x.id === client.config.auto_channel_id);
             notify_channel.send(`Shop data for **${res.date}**`, attachment);
         }
         

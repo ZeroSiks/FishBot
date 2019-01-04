@@ -2,6 +2,7 @@ const config = {
     'token': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     'ownerID': 'xxxxxxxxxxxxxxxxxx',
     'prefix': 'b!',
-    'fnkey': 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+    'fnkey': 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // Get from https://fortnitetracker.com/site-api
+    'auto_channel_id': 'xxxxxxxxxxxxxxxxxx' // Channel id for autonews and autoshop
 };
 module.exports = config;
