@@ -22,5 +22,12 @@ module.exports = (client) => {
             cmd.run(client);
         }, 60 * 1000); // Check every minute
     };
+    const autonews = () => {
+        setInterval(function() {
+            const cmd = client.commands.get('news');
+            cmd.run(client);
+        }, 60 * 1000);
+    };
     autoshop();
+    autonews();
 };

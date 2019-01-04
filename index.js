@@ -7,6 +7,7 @@ const client = new Discord.Client(),
 client.config = require('./config.js');
 client.commands = new Enmap();
 client.fortnitedb = new Enmap({provider: new EnmapLevel({name: 'fortnitedb'})});
+client.newsCheck = new Enmap({provider: new EnmapLevel({name: 'newCheck'})});
 
 const init = async () => {
     fs.readdir('./events/', (err,files) => {
