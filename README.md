@@ -1,4 +1,4 @@
-# Bermuda-FN
+# FishBot
 A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
 (Note: This bot is not meant to be used in multiple servers and will not work with sharding)
 
@@ -18,3 +18,4 @@ A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
 - Anidiotsguide for the command handler and main bot template.
 - The [Fortnite tracker](https://fortnitetracker.com) for the stats API.
 - [Free Fortnite API](https://fortniteapi.com/) for the shop and news API.
+- @deg™ on Discord.
