@@ -4,8 +4,16 @@ A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
 
 ## Features
 - Solo, Duo, Squad and overall Fortnite BR stats commands.
+
+![Overall and solo stats](https://cdn.discordapp.com/attachments/524148033877704714/531429126175981569/unknown.png "Stats")
+
 - Grab Fortnite BR daily shop.
+
+![alt text](https://cdn.discordapp.com/attachments/524148033877704714/531418650096173066/unknown.png "Shop")
+
 - Send ingame news to Discord.
+
+![alt text](https://cdn.discordapp.com/attachments/524148033877704714/531418147215900682/unknown.png "News")
 - Autoshop and autonews.
 
 ## Requirements
