@@ -154,7 +154,12 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                         ctx.drawImage(logo, 25, 25, 200, 200);
 
                         const attachment = new Discord.Attachment(canvas.toBuffer(), './ree.png');
-                        message.channel.send(attachment);
+                        // message.channel.send(attachment);
+                        const embed = new Discord.RichEmbed()
+                            .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#A1E7B2')
+                            .attachFile(attachment)
+                            .setImage('attachment://ree.png');
+                        message.channel.send({embed});
                     }
                 }
             }
