@@ -69,7 +69,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                     case 'embed':
                     case 'v1': {
                         const embed = new Discord.RichEmbed()
-                            .setColor(message.guild ? message.guild.me.displayHexColor : '#A1E7B2')
+                            .setColor(message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
                             .setTitle(`Fortnite Squad Stats for ${result.username} on ${result.platform}`)
                             .setURL(result.url)
                             .setFooter('Data provided by FortniteTracker')
@@ -163,7 +163,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                         const attachment = new Discord.Attachment(canvas.toBuffer(), './ree.png');
                         // message.channel.send(attachment);
                         const embed = new Discord.RichEmbed()
-                            .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#A1E7B2')
+                            .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#ed4c5c')
                             .attachFile(attachment)
                             .setImage('attachment://ree.png');
                         message.channel.send({embed});

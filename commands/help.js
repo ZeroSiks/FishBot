@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = (client, message) => { // eslint-disable-line no-unused-vars
     message.channel.send('This is a temporary help command. Will be updated later.');
     const embed = new Discord.RichEmbed()
-        .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#A1E7B2')
+        .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#ed4c5c')
         .setTitle('FishBot Help Command')
         .addField('Fortnite', 'Displays a player\'s overall fortnite stats.\nUsage: b!fn <platform> <username>')
         .addField('Solo', 'Displays a player\'s solo fortnite stats.\nUsage: b!solo <platform> <username>')
