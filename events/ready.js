@@ -28,6 +28,13 @@ module.exports = (client) => {
             cmd.run(client);
         }, 60 * 1000);
     };
+    const autocs = () => {
+        setInterval(function() {
+            const cmd = client.commands.get('cheatsheet');
+            cmd.run(client);
+        }, 60 * 1000);
+    };
     autoshop();
     autonews();
+    autocs();
 };
