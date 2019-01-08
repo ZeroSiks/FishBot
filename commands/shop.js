@@ -6,7 +6,7 @@ const fetch = require('node-fetch'),
 
 function daTe(d1) {
     const d2 = moment.unix(d1);
-    const d3 = moment.tz(d2, 'Indian/Maldives').format('Do MMMM YYYY, h:mm a');
+    const d3 = moment.tz(d2, 'Indian/Maldives').format('Do MMMM YYYY, h:mm A');
     return d3;
 }
 

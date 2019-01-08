@@ -4,7 +4,7 @@ const moment = require('moment-timezone');
 
 function daTe(d1) {
     const d2 = moment.unix(d1);
-    const d3 = moment.tz(d2, 'Indian/Maldives').format('Do MMMM YYYY, h:mm a');
+    const d3 = moment.tz(d2, 'Indian/Maldives').format('Do MMMM YYYY, h:mm A');
     return d3;
 }
 exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
