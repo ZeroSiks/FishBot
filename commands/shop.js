@@ -44,9 +44,11 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
             // message.channel.send(`Shop data for **${res.date}**`, attachment);
             sendEmbed(message.channel);
         } else {
-            const notify_channel = client.channels.find(x => x.id === client.config.auto_channel_id);
+            client.config.auto_channels.forEach(function(chan) {
+                const notify_channel = client.channels.find(x => x.id === chan);
+                sendEmbed(notify_channel);
+            });
             // notify_channel.send(`Shop data for **${res.date}**`, attachment);
-            sendEmbed(notify_channel);
         }
         
     }).catch(err => console.error(err));

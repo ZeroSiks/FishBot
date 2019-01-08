@@ -32,7 +32,11 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
                 return;
             }
             if (oldNewsDate === res.entries[0].time) return;
-            sendEmbed(0, (client.channels.find(x => x.id === client.config.auto_channel_id)));
+            client.config.auto_channels.forEach(function(chan) {
+                const notify_channel = client.channels.find(x => x.id === chan);
+                sendEmbed(0, notify_channel);
+            });
+            // sendEmbed(0, (client.channels.find(x => x.id === client.config.auto_channel_id)));
             client.newsCheck.set('time_latest', res.entries[0].time);
         }
     }).catch(err => console.error(err));

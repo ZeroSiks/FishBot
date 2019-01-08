@@ -1,6 +1,7 @@
 # FishBot
 A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
-(Note: This bot is not meant to be used in multiple servers and will not work with sharding)
+
+(Note: This bot will not work with sharding)
 
 ## Features
 - Solo, Duo, Squad and overall Fortnite BR stats commands.

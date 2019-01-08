@@ -3,6 +3,6 @@ const config = {
     'ownerID': 'xxxxxxxxxxxxxxxxxx',
     'prefix': 'b!',
     'fnkey': 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', // Get from https://fortnitetracker.com/site-api
-    'auto_channel_id': 'xxxxxxxxxxxxxxxxxx' // Channel id for autonews and autoshop
+    'auto_channels': ['xxxxxxxxxxxxxxxxxx'] // Channel ids for autonews and autoshop, separate with a comma
 };
 module.exports = config;
