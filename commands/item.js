@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
             }
             let obtain = '';
             if (res.obtained_type === 'battlepass') {
-                obtain = `Battlepass ${res.obtained}`;
+                obtain = `${res.obtained.includes('Battlepass') ?  res.obtained :  'Battlepass ' + res.obtained}`;
             } else if (res.obtained_type === 'vbucks') {
                 obtain = `${client.emojis.get('531875969200422944')} ${res.obtained}`;
             }
