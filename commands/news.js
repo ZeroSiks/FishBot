@@ -32,6 +32,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
                 return;
             }
             if (oldNewsDate === res.entries[0].time) return;
+            if (parseInt(oldNewsDate, 10) > parseInt(res.entries[0].time, 10)) return;
             client.config.auto_channels.forEach(function(chan) {
                 const notify_channel = client.channels.find(x => x.id === chan);
                 sendEmbed(0, notify_channel);

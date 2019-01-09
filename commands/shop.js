@@ -39,15 +39,25 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
                 .setFooter(`Last update at: ${daTe(res.lastupdate)}`);
             channel.send(embed);
         };
-
+        const lastupdate = res.lastupdate.toString();
         if (message) {
             // message.channel.send(`Shop data for **${res.date}**`, attachment);
             sendEmbed(message.channel);
         } else {
+            const oldShopDate = client.autoCheck.get('shop_latest');
+            if (!oldShopDate) {
+                console.log('Shop time set! ' + lastupdate);
+                client.autoCheck.set('shop_latest', lastupdate);
+                return;
+            }
+            if (oldShopDate === lastupdate) return;
+            if (parseInt(oldShopDate, 10) > parseInt(lastupdate, 10)) return;
             client.config.auto_channels.forEach(function(chan) {
                 const notify_channel = client.channels.find(x => x.id === chan);
                 sendEmbed(notify_channel);
             });
+            client.autoCheck.set('shop_latest', lastupdate);
+            console.log('New latest shop time set! ' + lastupdate);
             // notify_channel.send(`Shop data for **${res.date}**`, attachment);
         }
         
