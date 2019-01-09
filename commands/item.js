@@ -40,7 +40,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                 obtain = `${res.obtained.includes('Battlepass') ?  res.obtained :  'Battlepass ' + res.obtained}`;
             } else if (res.obtained_type === 'vbucks') {
                 obtain = `${client.emojis.get('531875969200422944')} ${res.obtained}`;
-            }
+            } else obtain = res.obtained;
             let todaystore = '';
             if (res.todaystore === 1) {
                 todaystore = '**This item is in the store today!**\n\n';

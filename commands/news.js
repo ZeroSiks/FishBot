@@ -25,10 +25,10 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
             sendEmbed(1, message.channel);
             sendEmbed(2, message.channel);
         } else {
-            const oldNewsDate = client.newsCheck.get('time_latest');
+            const oldNewsDate = client.autoCheck.get('news_latest');
             if (!oldNewsDate) {
-                console.log('New latest time set! ' + res.entries[0].time);
-                client.newsCheck.set('time_latest', res.entries[0].time);
+                console.log('News time set! ' + res.entries[0].time);
+                client.autoCheck.set('news_latest', res.entries[0].time);
                 return;
             }
             if (oldNewsDate === res.entries[0].time) return;
@@ -37,7 +37,8 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
                 sendEmbed(0, notify_channel);
             });
             // sendEmbed(0, (client.channels.find(x => x.id === client.config.auto_channel_id)));
-            client.newsCheck.set('time_latest', res.entries[0].time);
+            client.autoCheck.set('news_latest', res.entries[0].time);
+            console.log('New latest news time set! ' + res.entries[0].time);
         }
     }).catch(err => console.error(err));
 };

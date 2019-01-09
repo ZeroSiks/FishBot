@@ -1,14 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client(),
     Enmap = require('enmap'),
-    fs = require('fs'),
-    EnmapLevel = require('enmap-level');
+    fs = require('fs');
 
 client.config = require('./config.js');
 client.commands = new Enmap();
-client.fortnitedb = new Enmap({provider: new EnmapLevel({name: 'fortnitedb'})});
-client.newsCheck = new Enmap({provider: new EnmapLevel({name: 'newCheck'})});
-client.csCheck = new Enmap({provider: new EnmapLevel({name: 'csCheck'})});
+
+client.fortnitedb = new Enmap({name: 'fortnitedb'});
+client.autoCheck = new Enmap({name: 'autoCheck'});
 
 const init = async () => {
     fs.readdir('./events/', (err,files) => {

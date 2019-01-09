@@ -55,23 +55,25 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
             channel.send(embed);
         };
         // message.channel.send(embed); 
-
+        const createdTime = data.data.created_utc.toString();
+        
         if (message) {
             sendEmbed(message.channel);
         } else {
-            const oldCSDate = client.csCheck.get('time_latest');
+            const oldCSDate = client.autoCheck.get('cs_latest');
             if (!oldCSDate) {
-                console.log('New latest cs time set! ' + data.data.created_utc);
-                client.csCheck.set('time_latest', data.data.created_utc);
+                console.log('CS time set! ' + createdTime);
+                client.autoCheck.set('cs_latest', createdTime);
                 return;
             }
-            if (oldCSDate === data.data.created_utc) return;
+            if (oldCSDate === createdTime) return;
             client.config.auto_channels.forEach(function(chan) {
                 const notify_channel = client.channels.find(x => x.id === chan);
                 sendEmbed(notify_channel);
             });
             // sendEmbed(0, (client.channels.find(x => x.id === client.config.auto_channel_id)));
-            client.csCheck.set('time_latest', data.data.created_utc);
+            client.autoCheck.set('cs_latest', createdTime);
+            console.log('New latest cs time set! ' + createdTime);
         }
     }).catch(err => console.error(err));
 };

@@ -9,11 +9,11 @@
   "author": "AliRaish",
   "license": "MIT",
   "dependencies": {
+    "better-sqlite-pool": "^0.2.0",
     "canvas": "^2.0.1",
     "chalk": "^2.4.1",
     "discord.js": "^11.3.2",
-    "enmap": "^2.7.2",
-    "enmap-level": "^2.1.0",
+    "enmap": "^4.6.5",
     "eslint": "^5.10.0",
     "fnbrco.js": "^1.0.1",
     "fortnite": "^4.1.1",
