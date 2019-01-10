@@ -176,3 +176,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         return console.log(err);
     }
 };
+
+exports.help = {
+    name: 'duo',
+    description: 'Fetches duo stats for a user from The Fortnite Tracker',
+    usage: 'duo (Platform) [Epic Username]',
+    examples: ['duo Ninja', 'duo ps4 PrismR22', 'duo xbox <insert an xbox player\'s name here cause idk any lol>', 'duo psn psn(skyray11)']
+};

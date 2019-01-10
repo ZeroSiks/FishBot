@@ -63,3 +63,9 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         
     }).catch(err => console.error(err));
 };
+
+exports.help = {
+    name: 'shop',
+    description: 'Sends an image of the current item shop',
+    usage: 'shop'
+};

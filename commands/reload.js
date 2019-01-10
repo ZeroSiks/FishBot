@@ -15,3 +15,9 @@ exports.run = (client, message, args) => {
     message.reply(`The command ${commandName} has been reloaded`);
     console.log(`The command ${commandName} has been reloaded`);
 };
+
+exports.help = {
+    name: 'reload',
+    description: 'Command to reload commands',
+    usage: 'reload [Command Name]'
+};

@@ -176,3 +176,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         return console.log(err);
     }
 };
+
+exports.help = {
+    name: 'solo',
+    description: 'Fetches solo stats for a user from The Fortnite Tracker',
+    usage: 'solo (Platform) [Epic Username]',
+    examples: ['solo Ninja', 'solo ps4 PrismR22', 'solo xbox <insert an xbox player\'s name here cause idk any lol>', 'solo psn psn(skyray11)']
+};

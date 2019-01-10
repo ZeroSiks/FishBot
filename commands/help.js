@@ -1,17 +1,33 @@
 const Discord = require('discord.js');
 
-exports.run = (client, message) => { // eslint-disable-line no-unused-vars
-    message.channel.send('This is a temporary help command. Will be updated later.');
-    const embed = new Discord.RichEmbed()
-        .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#ed4c5c')
-        .setTitle('FishBot Help Command')
-        .addField('Fortnite', 'Displays a player\'s overall fortnite stats.\nUsage: b!fn <platform> <username>')
-        .addField('Solo', 'Displays a player\'s solo fortnite stats.\nUsage: b!solo <platform> <username>')
-        .addField('Duo', 'Displays a player\'s duo fortnite stats.\nUsage: b!duo <platform> <username>')
-        .addField('Squad', 'Displays a player\'s squad fortnite stats.\nUsage: b!squad <platform> <username>')
-        .addField('Link', 'Links your discord ID to your fortnite account for easier access\nUsage: b!link <platform> <username>')
-        .addField('Unlink', 'Unlinks your discord account and fortnite account\nUsage: b!unlink')
-        .addField('Ping', 'Pings the bot.\nUsage: b!ping');
+exports.run = (client, message, args) => { // eslint-disable-line no-unused-vars
+    if (!args[0]) {
+        const commandNames = Array.from(client.commands.keys());
+        const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
-    message.channel.send(embed);
+        const embed = new Discord.RichEmbed()
+            .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+            .setTitle('Command List')
+            .setDescription(`Commands with <> means argument is required, () means argument is optional.\n\n${client.commands.map(c => `\`${client.config.prefix}${c.help.name}\`${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`)
+            .setFooter(`For usage details, type ${client.config.prefix}help (commandname)`);
+        message.channel.send((embed));
+    } else {
+        const cmd = args[0];
+        if (client.commands.has(cmd)) {
+            const command = client.commands.get(cmd);
+            const embed = new Discord.RichEmbed()
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setTitle(`Command Info: ${command.help.name.charAt(0).toUpperCase() + command.help.name.substr(1).toLowerCase()}`)
+                .setDescription(command.help.description)
+                .addField('Usage', client.config.prefix + command.help.usage);
+            if (command.help.examples) embed.addField('Examples', command.help.examples.map(e => `\`${client.config.prefix}${e}\``));
+            message.channel.send((embed));
+        }
+    }
+};
+
+exports.help = {
+    name: 'help',
+    description: 'Displays all the available commands.',
+    usage: 'help (command)'
 };

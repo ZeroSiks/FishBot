@@ -67,3 +67,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         }).catch(err => console.error(err));
     }).catch(err => console.error(err));
 };
+
+exports.help = {
+    name: 'item',
+    description: 'Sends information about a cosmetic item.',
+    usage: 'item [Item Name]',
+    examples: ['item Fate', 'item fishstick', 'item true heart']
+};

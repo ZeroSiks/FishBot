@@ -43,3 +43,9 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         }
     }).catch(err => console.error(err));
 };
+
+exports.help = {
+    name: 'news',
+    description: 'Sends latest Fortnite ingame news',
+    usage: 'news'
+};

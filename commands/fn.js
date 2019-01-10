@@ -169,3 +169,11 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         return console.log(err);
     }
 };
+
+exports.help = {
+    name: 'fortnite',
+    description: 'Fetches overall fortnite stats for a user from The Fortnite Tracker',
+    usage: 'fn (Platform) [Epic Username]',
+    examples: ['fn Ninja', 'fn ps4 PrismR22', 'fn xbox <insert an xbox player\'s name here cause idk any lol>', 'fn psn psn(skyray11)']
+};
+//[The Tracker Network](https://fortnitetracker.com/)

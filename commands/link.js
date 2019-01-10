@@ -19,3 +19,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         return console.log(error);
     } message.channel.send('Successfully linked account!');
 };
+
+exports.help = {
+    name: 'link',
+    description: 'Link your Discord ID and Epic username',
+    usage: 'link (Platform) [Epic Username]',
+    examples: ['link tfue', 'link ps4 ZeroSiks', 'link xbl <insert an xbox player\'s name here cause idk any lol>']
+};

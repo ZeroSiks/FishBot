@@ -78,3 +78,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         }
     }).catch(err => console.error(err));
 };
+
+exports.help = {
+    name: 'cheatsheet',
+    description: 'Sends thesquatingdog\'s cheatsheet for the specified or current week.',
+    usage: 'cheatsheet (Week No.)',
+    examples: ['cheatsheet', 'cheatcheet 5']
+};

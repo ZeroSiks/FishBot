@@ -176,3 +176,10 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
         return console.log(err);
     }
 };
+
+exports.help = {
+    name: 'squad',
+    description: 'Fetches squad stats for a user from The Fortnite Tracker',
+    usage: 'squad (Platform) [Epic Username]',
+    examples: ['squad Ninja', 'squad ps4 PrismR22', 'squad xbox <insert an xbox player\'s name here cause idk any lol>', 'squad psn psn(skyray11)']
+};

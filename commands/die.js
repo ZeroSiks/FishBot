@@ -4,3 +4,9 @@ exports.run = async (client, message) => {
         process.exit(1);
     } else message.reply('~~Oof~~, nice try retard.');
 };
+
+exports.help = {
+    name: 'die',
+    description: 'It\'s obvious what this does. Don\'t use this at home',
+    usage: 'die'
+};
