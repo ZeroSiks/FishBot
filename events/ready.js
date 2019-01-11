@@ -6,7 +6,7 @@ module.exports = (client) => {
         setInterval(function() {
             const cmd = client.commands.get('shop');
             cmd.run(client);
-        }, 60 * 1000);
+        }, 900000);
     };
     const autonews = () => {
         setInterval(function() {
