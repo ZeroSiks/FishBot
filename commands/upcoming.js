@@ -6,13 +6,17 @@ const fetch = require('node-fetch'),
 exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
     const link = 'https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get';
     fetch(link).then(result => result.json()).then(async res => {
-        const length = (Math.ceil(res.rows / 4) * 200);
-        const canvas = Canvas.createCanvas(800, length);
+        const width = Math.ceil(res.items.length / Math.sqrt(res.items.length)) * 200;
+        const length = Math.floor(res.items.length / Math.sqrt(res.items.length)) * 200;
+        const canvas = Canvas.createCanvas(width, length);
         const ctx = canvas.getContext('2d');
+
+        console.log(Math.floor(res.items.length / Math.sqrt(res.items.length)));
+        console.log(Math.ceil(res.items.length / Math.sqrt(res.items.length)));
         
         let num = 0;
-        for (let i = 0; i < (Math.ceil(res.items.length / 4)); i++) {
-            for (let j = 0; j < 4; j++) {
+        for (let i = 0; i < (Math.floor(res.items.length / Math.sqrt(res.items.length))); i++) {
+            for (let j = 0; j < (Math.ceil(res.items.length / Math.sqrt(res.items.length))); j++) {
                 if (num < res.items.length) {
                     const { body: buffer } = await snekfetch.get(res.items[num].item.images.information);
                     const avatar = await Canvas.loadImage(buffer);
