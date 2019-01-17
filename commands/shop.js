@@ -9,25 +9,85 @@ function daTe(d1) {
     const d3 = moment.tz(d2, 'Indian/Maldives').format('Do MMMM YYYY, h:mm A');
     return d3;
 }
+const getTimeLeft = function() {
+    const now = moment();
+    const deadline = now.clone().hour(5).minute(0).second(0);
+    if (now.isAfter(deadline)) {
+        var tomorrow = moment(new Date()).add(1, 'days').hour(5).minute(0).second(0);
+        return tomorrow.diff(now, 'hours') + ' hrs, ' + (tomorrow.diff(now, 'minutes') % 60) + ' mins';
+    } else {
+        return deadline.diff(now, 'hours') + ' hrs, ' + (deadline.diff(now, 'minutes') % 60) + ' mins';
+    }
+};
 
 exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
     const link = 'https://fortnite-public-api.theapinetwork.com/prod09/store/get';
     fetch(link).then(result => result.json()).then(async res => {
         const length = (Math.ceil(res.rows / 4) * 200);
-        const canvas = Canvas.createCanvas(800, length);
+        Canvas.registerFont('./assets/LuckiestGuy.ttf', { family: 'luckiestguy' });
+        const canvas = Canvas.createCanvas(900 + 0, length + 180);
         const ctx = canvas.getContext('2d');
-        
+
+        const background = await Canvas.loadImage('./assets/blue-background-2001.jpg');
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(13, 12, 12, 0.3)';
+        ctx.fillRect(10, 85, 430, length + 85);
+        ctx.fillRect(460, 85, 430, length + 85);
+
+        ctx.font = '50px "luckiestguy"';
+        ctx.fillStyle = '#ffffff';
+        // ctx.fillText('ފީޗާޑް', 25, 80);
+        // ctx.fillText('ޑެއިލީ', 525, 80);
+
+        ctx.fillText('Featured', 25, 130);
+        ctx.fillText('Daily', 475, 130);
+
+        ctx.font = '35px "luckiestguy"';
+        ctx.textAlign = 'center'; 
+        ctx.fillText(`Shop resets in ${getTimeLeft()}`, canvas.width / 2, 55);
+
+        const ordering = {}, // map for efficient lookup of sortIndex
+            sortOrder = ['legendary','epic','rare','uncommon','common'];
+        for (let i=0; i<sortOrder.length; i++)
+            ordering[sortOrder[i]] = i;
+
+        res.items.sort( function(a, b) {
+            return (ordering[a.item.rarity] - ordering[b.item.rarity]);
+        });
+
+        const featured = [], daily = [];
+        res.items.forEach(item => {
+            if (item.featured === 1) {
+                featured.push(item);
+            } else {
+                daily.push(item);
+            }
+        });
+
         let num = 0;
-        for (var i = 0; i < (Math.ceil(res.items.length / 4)); i++) {
-            for (var j = 0; j < 4; j++) {
-                if (num < res.items.length) {
-                    const { body: buffer } = await snekfetch.get(res.items[num].item.images.information);
+        for (let i = 0; i < (Math.ceil(featured.length / 2)); i++) {
+            for (let j = 0; j < 2; j++) {
+                if (num < featured.length) {
+                    const { body: buffer } = await snekfetch.get(featured[num].item.images.information);
                     const avatar = await Canvas.loadImage(buffer);
-                    ctx.drawImage(avatar, j * 200, i * 200, 200, 200);
+                    ctx.drawImage(avatar, (j * 205) + 25, (i * 205) + 150, 200, 200);
                     num++;
                 }
             }
         }
+
+        num = 0;
+        for (let i = 0; i < (Math.ceil(daily.length / 2)); i++) {
+            for (let j = 0; j < 2; j++) {
+                if (num < daily.length) {
+                    const { body: buffer } = await snekfetch.get(daily[num].item.images.information);
+                    const avatar = await Canvas.loadImage(buffer);
+                    ctx.drawImage(avatar, (j * 205) + 450 + 25, (i * 205) + 150, 200, 200);
+                    num++;
+                }
+            }
+        }
+
         const attachment = new Discord.Attachment(canvas.toBuffer(), 'shop.png');
 
         const sendEmbed = (channel) => {
@@ -66,6 +126,6 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
 
 exports.help = {
     name: 'shop',
-    description: 'Sends an image of the current item shop',
+    description: 'Generates an image of the current item shop',
     usage: 'shop'
 };
