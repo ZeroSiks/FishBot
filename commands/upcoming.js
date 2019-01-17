@@ -10,7 +10,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         const length = Math.floor(res.items.length / Math.sqrt(res.items.length)) * 200;
         const canvas = Canvas.createCanvas(width, length);
         const ctx = canvas.getContext('2d');
-
+        
         let num = 0;
         for (let i = 0; i < (Math.floor(res.items.length / Math.sqrt(res.items.length))); i++) {
             for (let j = 0; j < (Math.ceil(res.items.length / Math.sqrt(res.items.length))); j++) {
