@@ -10,10 +10,10 @@ function daTe(d1) {
     return d3;
 }
 const getTimeLeft = function() {
-    const now = moment();
-    const deadline = now.clone().hour(5).minute(0).second(0);
+    const now = moment.utc();
+    const deadline = now.clone().hour(0).minute(0).second(0);
     if (now.isAfter(deadline)) {
-        var tomorrow = moment(new Date()).add(1, 'days').hour(5).minute(0).second(0);
+        const tomorrow = moment.utc(new Date()).add(1, 'days').hour(0).minute(0).second(0);
         return tomorrow.diff(now, 'hours') + ' hrs, ' + (tomorrow.diff(now, 'minutes') % 60) + ' mins';
     } else {
         return deadline.diff(now, 'hours') + ' hrs, ' + (deadline.diff(now, 'minutes') % 60) + ' mins';
