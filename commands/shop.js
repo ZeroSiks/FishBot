@@ -23,7 +23,31 @@ const getTimeLeft = function() {
 exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
     const link = 'https://fortnite-public-api.theapinetwork.com/prod09/store/get';
     fetch(link).then(result => result.json()).then(async res => {
-        const length = (Math.ceil(res.rows / 4) * 200);
+        const ordering = {}, // map for efficient lookup of sortIndex
+            sortOrder = ['legendary','epic','rare','uncommon','common'];
+        for (let i=0; i<sortOrder.length; i++)
+            ordering[sortOrder[i]] = i;
+
+        res.items.sort( function(a, b) {
+            return (ordering[a.item.rarity] - ordering[b.item.rarity]);
+        });
+
+        const featured = [], daily = [];
+        res.items.forEach(item => {
+            if (item.featured === 1) {
+                featured.push(item);
+            } else {
+                daily.push(item);
+            }
+        });
+
+        let length = 0;
+        if (daily.length >= featured.length) {
+            length = (daily.length / 2) * 200;
+        } else {
+            length = (featured.length / 2) * 200;
+        }
+
         Canvas.registerFont('./assets/LuckiestGuy.ttf', { family: 'luckiestguy' });
         const canvas = Canvas.createCanvas(900 + 0, length + 180);
         const ctx = canvas.getContext('2d');
@@ -45,24 +69,6 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         ctx.font = '35px "luckiestguy"';
         ctx.textAlign = 'center'; 
         ctx.fillText(`Shop resets in ${getTimeLeft()}`, canvas.width / 2, 55);
-
-        const ordering = {}, // map for efficient lookup of sortIndex
-            sortOrder = ['legendary','epic','rare','uncommon','common'];
-        for (let i=0; i<sortOrder.length; i++)
-            ordering[sortOrder[i]] = i;
-
-        res.items.sort( function(a, b) {
-            return (ordering[a.item.rarity] - ordering[b.item.rarity]);
-        });
-
-        const featured = [], daily = [];
-        res.items.forEach(item => {
-            if (item.featured === 1) {
-                featured.push(item);
-            } else {
-                daily.push(item);
-            }
-        });
 
         let num = 0;
         for (let i = 0; i < (Math.ceil(featured.length / 2)); i++) {
