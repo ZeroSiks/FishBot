@@ -98,7 +98,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
 
         const sendEmbed = (channel) => {
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
                 .setTitle(`Shop data for **${res.date}**`)
                 .attachFile(attachment)
                 .setImage('attachment://shop.png')

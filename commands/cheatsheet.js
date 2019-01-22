@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
 
         const sendEmbed = (channel) => {
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
                 .setTitle(data.data.title)
                 .setImage(data.data.url)
                 .setAuthor(data.data.author, 'https://styles.redditmedia.com/t5_d18cc/styles/profileIcon_goejqbbdyw721.jpg', 'https://www.reddit.com/user/thesquatingdog')

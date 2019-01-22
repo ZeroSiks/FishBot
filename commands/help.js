@@ -6,7 +6,7 @@ exports.run = (client, message, args) => { // eslint-disable-line no-unused-vars
         const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
         const embed = new Discord.RichEmbed()
-            .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+            .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
             .setTitle('Command List')
             .setDescription(`Commands with <> means argument is required, () means argument is optional.\n\n${client.commands.map(c => `\`${client.config.prefix}${c.help.name}\`${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`)
             .setFooter(`For usage details, type ${client.config.prefix}help (commandname)`);
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => { // eslint-disable-line no-unused-vars
         if (client.commands.has(cmd)) {
             const command = client.commands.get(cmd);
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
                 .setTitle(`Command Info: ${command.help.name.charAt(0).toUpperCase() + command.help.name.substr(1).toLowerCase()}`)
                 .setDescription(command.help.description)
                 .addField('Usage', client.config.prefix + command.help.usage);

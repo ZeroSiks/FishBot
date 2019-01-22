@@ -11,7 +11,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
             msg = `(${res.status}) ${res.message}`;
         }
         const embed = new Discord.RichEmbed()
-            .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+            .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
             .setTitle(msg)
             .setFooter(`Uptime: ${res.time.duration.formated}`);
         message.channel.send(embed);

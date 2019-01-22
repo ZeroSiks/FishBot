@@ -13,7 +13,7 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
         
         const sendEmbed = (i, channel) => {
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
                 .setTitle(res.entries[i].title)
                 .setDescription(res.entries[i].body)
                 .setImage(res.entries[i].image)

@@ -50,7 +50,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                 setName = `\nPart of the **${res.set.name}** set.`;
             }
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#ed4c5c')
+                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
                 .setTitle(`${res.name} - ${rarity} ${type} - ${obtain}`)
                 .setDescription(`${todaystore}${res.description}${setName}`)
                 .setThumbnail(res.images.background);
