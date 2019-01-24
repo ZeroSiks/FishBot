@@ -1,0 +1,185 @@
+[
+    {
+        "name": "Happy Hamlet",
+        "coordinates": "D9",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537308920046157875/480px-Happy-hamlet.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537308961897054208/Happy_Hamlet_Geo_TopView.png"
+    },
+    {
+        "name": "Frosty Flights",
+        "coordinates": "A8-B8",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537310173648257026/frosty-flights.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537308903252426763/Frosty_Flights_Geo_TopView.png"
+    },
+    {
+        "name": "Polar Peak",
+        "coordinates": "C8-C7",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537308376237998080/480px-Peak.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537308426162667540/Polar_Peak_Geo_TopView.png"
+    },
+    {
+        "name": "Junk Junction",
+        "coordinates": "B1-B2",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537308254062116884/480px-Junk_Junction_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537308296252620800/Junk_Junction_Geo_TopView.png"
+    },
+    {
+        "name": "Lazy Links",
+        "coordinates": "F2-F3",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537307815124008970/480px-Lazy_Links_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537307862498672650/Lazy_Links_Geo_TopView.png"
+    },
+    {
+        "name": "Haunted Hills",
+        "coordinates": "B2",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537307539549847577/480px-Haunted_Hills_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537307581580967960/Haunted_Hills_Geo_TopView.png"
+    },
+    {
+        "name": "Pleasant Park",
+        "coordinates": "C3-C4",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537307352911577126/480px-Pleasant_Park_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537307393932001290/Pleasant_Park_Geo_TopView.png"
+    },
+    {
+        "name": "Tomato Temple",
+        "coordinates": "G3-G4",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537307098632159232/480px-Tomato_Temple_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537307143603486732/Tomato_Temple_Geo_TopView.png"
+    },
+    {
+        "name": "Wailing Woods",
+        "coordinates": "H3-H4, I3-I4",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537306899410976773/480px-Wailing_Woods_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537306945967751169/Wailing_Woods_Geo_TopView.png"
+    },
+    {
+        "name": "Snobby Shores",
+        "coordinates": "A5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537306672272769024/480px-Fortnite_281329.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537306709094563870/Snobby_Shores_Geo_TopView.png"
+    },
+    {
+        "name": "Loot Lake",
+        "coordinates": "D4, E4-E5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537306334345822211/400px-Leaky_Lake.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537306386477088768/Leaky_Lake_Top_View_6.png"
+    },
+    {
+        "name": "Dusty Divot",
+        "coordinates": "F5-F6, G5-G6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537306066606882826/480px-Dusty_Divot_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537306131031392256/Dusty_Divot_Geo_TopView.png"
+    },
+    {
+        "name": "Retail Row",
+        "coordinates": "H6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537305783298293760/480px-Retail_Row_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537305821395288094/Retail_Row_Geo_TopView.png"
+    },
+    {
+        "name": "Lonely Lodge",
+        "coordinates": "I4-I5, J4-J5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537305398001270785/480px-Lonely_Lodge_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537305448487976980/Lonely_Lodge_Geo_TopView.png"
+    },
+    {
+        "name": "Salty Springs",
+        "coordinates": "F7",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537305226030481420/480px-Salty_Springs_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537305270188113923/Salty_Springs_Geo_TopView.png"
+    },
+    {
+        "name": "Tilted Towers",
+        "coordinates": "D5-D6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537304955577565205/480px-Fortnite_282029.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537305035735040000/Tilted_Towers_Geo_TopView.png"
+    },
+    {
+        "name": "Shifty Shafts",
+        "coordinates": "D7",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537304345624969228/480px-Fortnite_281929.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537304403162693642/Shifty_Shafts_Geo_TopView.png"
+    },
+    {
+        "name": "Fatal Fields",
+        "coordinates": "F8-F9",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537303666042863629/480px-Fatal_Fields_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537303710150426644/Fatal_Fields_Geo_TopView.png"
+    },
+    {
+        "name": "Paradise Palms",
+        "coordinates": "H8-I8",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537303463969816586/480px-Paradise_Palms_Geo-1.png",
+        "mapImg": "./assets/map-imgs/paradise.jpg"
+    },
+    {
+        "name": "Lucky Landing",
+        "coordinates": "F10",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537300144677191681/480px-Fortnite_282229.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537300193259945994/Lucky_Landing_Geo_TopView.png"
+    },
+    
+
+
+    {
+        "name": "Motel",
+        "coordinates": "D2",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537299255577149441/480px-Motel_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537299290448592896/Motel_Geo_TopView.png"
+    },
+    {
+        "name": "Stadium",
+        "coordinates": "C5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537299016774451201/480px-Fortnite.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537299059225133056/Stadium_Geo_TopView.png"
+    },
+    {
+        "name": "Villain Lair",
+        "coordinates": "B4-B5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537298692391174144/480px-Fortnite_28329.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537298761064644608/Villain_Lair_Geo_TopView.png"
+    },
+    {
+        "name": "Container Yard (Cargo)",
+        "coordinates": "H4-H5",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537298452258881547/480px-Container_Yard_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537298490737426434/Container_Yard_Geo_TopView.png"
+    },
+    {
+        "name": "Race Track",
+        "coordinates": "I6-J6, I7-J7",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537297667391225856/480px-Race_Track_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537297726367334401/Race_Track_Geo_TopView.png"
+    },
+    {
+        "name": "RV Park (Trailer Park)",
+        "coordinates": "I5-I6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537297296916873225/480px-RV_Park_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537297344392069120/RV_Park_Geo_TopView.png"
+    },
+    {
+        "name": "Mansion",
+        "coordinates": "J5-J6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537296730820182046/480px-Fortnite_28529.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537296766567972864/Mansion_Geo_TopView.png"
+    },
+    {
+        "name": "Viking Outpost",
+        "coordinates": "B6",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537296481267351552/480px-Fortnite_28629.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537296513983053847/Viking_Outpost_Geo_TopView.png"
+    },
+    {
+        "name": "Warehouses (Yonder)",
+        "coordinates": "E9",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537293894992527360/480px-Fortnite_28729.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537293872536092693/Warehouses_Geo_TopView.png"
+    },
+    {
+        "name": "Adobe Village",
+        "coordinates": "H9-H10",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537292343297048586/480px-Adobe_Village_Geo-1.png",
+        "mapImg": "https://cdn.discordapp.com/attachments/537286218317037589/537290165429993492/Adobe_Village_Geo_TopView.png"
+    }
+]

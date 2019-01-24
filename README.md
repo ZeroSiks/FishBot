@@ -14,12 +14,14 @@ A Discord Fortnite bot of sorts. Help on improving it would be appreciated.
 - Send ingame news to Discord.
 - Get challenge cheatsheets from reddit.
 - Get cosmetic items info.
+- Suggest drop locations for you.
 - Autoshop, autonews and autocheatsheets.
 
 ## Screenshots
 ![Overall and solo stats](https://cdn.discordapp.com/attachments/524148033877704714/531429126175981569/unknown.png "Stats")
 
-![shop example](https://cdn.discordapp.com/attachments/524148033877704714/531418650096173066/unknown.png "Shop")
+<!-- ![shop example](https://cdn.discordapp.com/attachments/524148033877704714/531418650096173066/unknown.png "Shop") -->
+![shop example](https://cdn.discordapp.com/attachments/524148033877704714/537320417342259201/unknown.png "Shop")
 
 ![news example](https://cdn.discordapp.com/attachments/524148033877704714/531418147215900682/unknown.png "News")
 

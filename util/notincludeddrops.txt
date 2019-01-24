@@ -1,0 +1,46 @@
+
+~~TEXT FILE CONTAINING DROP LOCATIONS NOT INCLUDED IN / REMOVED FROM DROPLOCATIONS.JSON~~
+
+
+_OLD_POIS'_
+    Dusty Depot
+    Factory
+    Castle Ruins
+    Moisty Mire
+    Prison
+    Anarchy Acres
+    Open Soccer Stadium
+    Tomato Town
+    Floating Island
+    Greasy Grove
+    Flush Factory
+    Risky Reels
+
+
+_NOT_INCLUDED_
+The Block
+    {
+        "name": "The Block",
+        "coordinates": "H2-H3",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537299974203899925/300px-Fortnite-Risky-Reels-Is-Replaced-By-A-Block.png",
+        "mapImg": ""
+    },
+
+
+Chair
+    {
+        "name": "Outskirts (Chair)",
+        "coordinates": "D8",
+        "image": "",
+        "mapImg": ""
+    },
+
+
+Castle
+    {
+        "name": "Castle",
+        "coordinates": "B2-B3",
+        "image": "https://cdn.discordapp.com/attachments/537286218317037589/537296217579716629/480px-Fortnite_v6.png",
+        "mapImg": ""
+    },
+
