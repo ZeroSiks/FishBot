@@ -3,14 +3,18 @@ const fn = require('fortnite');
 const Canvas = require('canvas');
 
 exports.run = async (client, message, args) => { // eslint-disable-line no-unused-vars
+    Canvas.registerFont('./assets/LuckiestGuy.ttf', { family: 'luckiestguy' });
+    Canvas.registerFont('./assets/Faruma.ttf', { family: 'faruma' });
+    /*
     const applyText = (canvas, text) => {
         const ctx = canvas.getContext('2d');
-        let fontSize = 65;
+        let fontSize = 20;
         do {
-            ctx.font = `${fontSize -= 10}px sans-serif`;
+            ctx.font = `${fontSize -= 10}px luckiestguy`;
         } while (ctx.measureText(text).width > canvas.width - 300);
         return ctx.font;
     };
+    */
     const fortnite = new fn(client.config.fnkey);
   
     let platform;
@@ -87,76 +91,66 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
                     case 'v2':
                     case 'new':
                     default: {
-                        const canvas = Canvas.createCanvas(700, 500);
+                        const solo = result.stats.solo;
+                        const duo = result.stats.duo;
+                        const squad = result.stats.squad;
+                        const canvas = Canvas.createCanvas(800, 600);
                         const ctx = canvas.getContext('2d');
 
-                        const background = await Canvas.loadImage('./assets/wallpaper.png');
+                        const background = await Canvas.loadImage('./assets/fishbotlayout2.png');
                         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
                         const ree = result.username;
-                        ctx.font = applyText(canvas, ree);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(ree, canvas.width / 2.5, 100);
+                        ctx.font = '28px luckiestguy';
+                        ctx.fillStyle = '#99AAB5';
+                        ctx.fillText(ree, 22, 50);
 
-                        ctx.font = '40px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(plat, canvas.width / 2.5, 170);
+                        ctx.font = '22px luckiestguy';
+                        ctx.fillText(plat, 22, 85);
 
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('Matches,', 20, 280);
+                        ctx.font = '26px faruma';
+                        ctx.fillText('ލޯލް', 60, 150);
+                        
+                        ctx.font = '20px luckiestguy';
+                        ctx.fillStyle = '#BCBCBC';
+                        ctx.fillText(statz.Played, 305, 49);
+                        ctx.fillText(statz.Wins, 460, 49);
+                        ctx.fillText(statz.WinRate, 305, 75);
+                        ctx.fillText(statz.Kills, 640, 49);
+                        ctx.fillText(statz.KD, 460, 75);
+                        ctx.fillText(statz.Score, 640, 75);
 
-                        ctx.font = applyText(canvas, statz.Played);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.Played, 20, 348);
+                        ctx.font = '26px luckiestguy';
 
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('Wins,', 340, 280);
+                        ctx.fillText(solo.matches, 174, 212);
+                        ctx.fillText(solo.wins, 174, 276);
+                        ctx.fillText((Math.round((solo.wins / solo.matches) * 10000) / 100) + '%', 174, 343);
+                        ctx.fillText(solo.kills, 174, 405);
+                        ctx.fillText(solo.kd, 174, 470);
+                        ctx.fillText(solo.score, 174, 533);
+                        
+                        // console.log(solo);
+                        ctx.fillText(duo.matches, 324, 212);
+                        ctx.fillText(duo.wins, 324, 276);
+                        ctx.fillText((Math.round((duo.wins / duo.matches) * 10000) / 100) + '%', 324, 343);
+                        ctx.fillText(duo.kills, 324, 405);
+                        ctx.fillText(duo.kd, 324, 470);
+                        ctx.fillText(duo.score, 324, 533);
 
-                        ctx.font = applyText(canvas, statz.Wins);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.Wins, 340, 348);
+                        ctx.fillText(squad.matches, 490, 212);
+                        ctx.fillText(squad.wins, 490, 276);
+                        ctx.fillText((Math.round((squad.wins / squad.matches) * 10000) / 100) + '%', 490, 343);
+                        ctx.fillText(squad.kills, 490, 405);
+                        ctx.fillText(squad.kd, 490, 470);
+                        ctx.fillText(squad.score, 490, 533);
 
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('Win%,', 520, 280);
-
-                        ctx.font = applyText(canvas, statz.WinRate);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.WinRate, 520, 348);
-
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('Kills,', 340, 410);
-
-                        ctx.font = applyText(canvas, statz.Kills);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.Kills, 340, 478);
-
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('K/D,', 520, 410);
-
-                        ctx.font = applyText(canvas, statz.KD);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.KD, 520, 478);
-
-                        ctx.font = '28px sans-serif';
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText('Total Score,', 20, 410);
-
-                        ctx.font = applyText(canvas, statz.Score);
-                        ctx.fillStyle = '#ffffff';
-                        ctx.fillText(statz.Score, 20, 478);
-
-                        const logo = await Canvas.loadImage('./assets/fn-logo.jpg');
-                        ctx.drawImage(logo, 25, 25, 200, 200);
+                        ctx.fillText('W.I.P', 660, 212);
 
                         const attachment = new Discord.Attachment(canvas.toBuffer(), './ree.png');
                         // message.channel.send(attachment);
                         const embed = new Discord.RichEmbed()
-                            .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#35c7e4')
+                            // .setColor(message.guild.me.displayHexColor ? message.guild.me.displayHexColor : '#35c7e4')
+                            .setColor('#99AAB5')
                             .attachFile(attachment)
                             .setImage('attachment://ree.png');
                         message.channel.send({embed});
@@ -171,7 +165,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
 };
 
 exports.help = {
-    name: 'fortnite',
+    name: 'fn',
     description: 'Fetches overall fortnite stats for a user from The Fortnite Tracker',
     usage: 'fn (Platform) [Epic Username]',
     examples: ['fn Ninja', 'fn ps4 PrismR22', 'fn xbox <insert an xbox player\'s name here cause idk any lol>', 'fn psn psn(skyray11)']

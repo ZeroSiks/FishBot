@@ -41,54 +41,47 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
             }
         });
 
-        let length = 0;
-        if (daily.length >= featured.length) {
-            length = (daily.length / 2) * 200;
-        } else {
-            length = (featured.length / 2) * 200;
-        }
+        const length = Math.ceil((daily.length / 4) * 200) + Math.ceil((featured.length / 4) * 200);
 
         Canvas.registerFont('./assets/LuckiestGuy.ttf', { family: 'luckiestguy' });
-        const canvas = Canvas.createCanvas(900 + 0, length + 180);
+        const canvas = Canvas.createCanvas(875, length + 280);
         const ctx = canvas.getContext('2d');
 
-        const background = await Canvas.loadImage('./assets/blue-background-2001.jpg');
+        const background = await Canvas.loadImage('./assets/wallpaper2.png');
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        /*
         ctx.fillStyle = 'rgba(13, 12, 12, 0.3)';
-        ctx.fillRect(10, 85, 430, length + 85);
-        ctx.fillRect(460, 85, 430, length + 85);
-
-        ctx.font = '50px "luckiestguy"';
-        ctx.fillStyle = '#ffffff';
+        // ctx.fillStyle = '#2C2F33';
+        ctx.fillRect(10, 10, 830, Math.ceil((featured.length / 4) * 200) + 105);
+        ctx.fillRect(10, Math.ceil((featured.length / 4) * 200) + 128, 830, Math.ceil((daily.length / 4) * 200) + 125);
+        */
+        ctx.font = '40px "luckiestguy"';
+        ctx.fillStyle = '#99AAB5';
         // ctx.fillText('ފީޗާޑް', 25, 80);
         // ctx.fillText('ޑެއިލީ', 525, 80);
 
-        ctx.fillText('Featured', 25, 130);
-        ctx.fillText('Daily', 475, 130);
-
-        ctx.font = '35px "luckiestguy"';
-        ctx.textAlign = 'center'; 
-        ctx.fillText(`Shop resets in ${getTimeLeft()}`, canvas.width / 2, 55);
+        ctx.fillText('Featured', 25, 45);
+        ctx.fillText('Daily', 25, Math.ceil((featured.length / 4) * 200) + 160);
 
         let num = 0;
-        for (let i = 0; i < (Math.ceil(featured.length / 2)); i++) {
-            for (let j = 0; j < 2; j++) {
+        for (let i = 0; i < (Math.ceil(featured.length / 4)); i++) {
+            for (let j = 0; j < 4; j++) {
                 if (num < featured.length) {
                     const { body: buffer } = await snekfetch.get(featured[num].item.images.information);
                     const avatar = await Canvas.loadImage(buffer);
-                    ctx.drawImage(avatar, (j * 205) + 25, (i * 205) + 150, 200, 200);
+                    ctx.drawImage(avatar, (j * 205) + 25, (i * 205) + 55, 200, 200);
                     num++;
                 }
             }
         }
 
         num = 0;
-        for (let i = 0; i < (Math.ceil(daily.length / 2)); i++) {
-            for (let j = 0; j < 2; j++) {
+        for (let i = 0; i < (Math.ceil(daily.length / 4)); i++) {
+            for (let j = 0; j < 4; j++) {
                 if (num < daily.length) {
                     const { body: buffer } = await snekfetch.get(daily[num].item.images.information);
                     const avatar = await Canvas.loadImage(buffer);
-                    ctx.drawImage(avatar, (j * 205) + 450 + 25, (i * 205) + 150, 200, 200);
+                    ctx.drawImage(avatar, (j * 205) + 25, (i * 205) + Math.ceil((featured.length / 4) * 200) + 170, 200, 200);
                     num++;
                 }
             }
@@ -98,11 +91,12 @@ exports.run = async (client, message) => { // eslint-disable-line no-unused-vars
 
         const sendEmbed = (channel) => {
             const embed = new Discord.RichEmbed()
-                .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
-                .setTitle(`Shop data for **${res.date}**`)
+                // .setColor(message && message.guild ? message.guild.me.displayHexColor : '#35c7e4')
+                .setColor('#99AAB5')
+                .setDescription(`Item Shop - ${getTimeLeft()} till reset`)
                 .attachFile(attachment)
                 .setImage('attachment://shop.png')
-                .setFooter(`Last update at: ${daTe(res.lastupdate)}`);
+                .setFooter(`[${res.date}] Last update at: ${daTe(res.lastupdate)}`);
             channel.send(embed);
         };
         const lastupdate = res.lastupdate.toString();
